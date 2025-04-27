@@ -1,11 +1,30 @@
 import React from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Herosection = () => {
   const particlesInit = async (main) => {
     await loadFull(main);
   };
+
+  const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
+  const carouselImages = [
+    "/images/ecommerce1.jpg",
+    "/images/ecommerce2.jpg",
+    "/images/ecommerce3.jpg",
+  ];
 
   return (
     <div className="relative">
@@ -73,7 +92,7 @@ const Herosection = () => {
 
       <div className="container mx-auto px-4 py-12 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
         {/* Left Content */}
-        <div className="md:w-full space-y-8">
+        <div className="md:w-1/2 space-y-8">
           <p className="font-bold text-purple-800 text-4xl leading-tight">
             <span className="text-black">Never Miss a Deal.</span><br/>
             Monitor price changes and save more on your shopping.
@@ -102,6 +121,23 @@ const Herosection = () => {
             <button className="px-8 py-3 border-2 border-purple-800 text-purple-800 rounded-full hover:bg-purple-800 hover:text-white transition-all duration-200 font-semibold">
               <a href="/Blog">See How It Works</a>
             </button>
+          </div>
+        </div>
+
+        {/* Right Content - Carousel */}
+        <div className="md:w-1/2 md:pl-8">
+          <div className="p-4">
+            <Slider {...carouselSettings}>
+              {carouselImages.map((image, index) => (
+                <div key={index} className="outline-none">
+                  <img
+                    src={image}
+                    alt={`E-commerce slide ${index + 1}`}
+                    className="w-full h-[400px] object-cover rounded-xl"
+                  />
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </div>

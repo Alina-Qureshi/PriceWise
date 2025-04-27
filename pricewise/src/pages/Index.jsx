@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Herosection from '../components/Home/Herosection';
+import Featuredproducts from '../components/Home/Featuredproducts';
 import Searchpage from '../components/Home/Searchpage';
 import Webbenefits from '../components/Home/Webbenefits';
 import Usageofweb from '../components/Home/Usageofweb';
@@ -20,6 +21,15 @@ const Index = () => {
         transition={{ duration: 0.6 }}
       >
         <Herosection />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <Featuredproducts />
       </motion.div>
 
       <motion.div

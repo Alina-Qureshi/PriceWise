@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// HOST/PORT/DATABASE-name in URI
 
 const mongoURI = 'mongodb://127.0.0.1:27017/mydb';
 
