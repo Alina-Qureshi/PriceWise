@@ -6,6 +6,7 @@ import Searchpage from '../components/Home/Searchpage';
 import Webbenefits from '../components/Home/Webbenefits';
 import Usageofweb from '../components/Home/Usageofweb';
 import Pagelayout from '../components/layout/Pagelayout';
+import CallToAction from '../components/Home/CallToAction';
 
 const Index = () => {
   useEffect(() => {
@@ -57,6 +58,7 @@ const Index = () => {
         transition={{ duration: 0.8, delay: 0.3 }}
       >
         <Usageofweb />
+        <CallToAction />
       </motion.div>
     </Pagelayout>
   );

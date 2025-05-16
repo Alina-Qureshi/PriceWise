@@ -4,6 +4,7 @@ import { FaChevronRight, FaEdit, FaTrash, FaBell, FaPause, FaPlay, FaPlus } from
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 
+
 const Alertspage = () => {
   const [alerts, setAlerts] = useState([]);
   const [sortBy, setSortBy] = useState('date');
@@ -61,12 +62,13 @@ const Alertspage = () => {
               <option value="inactive">Inactive</option>
             </select>
           </div>
-          <button
+          <Link
+            to="/alerts/new"><button
             className="bg-purple-800 text-white px-6 py-2 rounded-lg flex items-center gap-2 hover:bg-purple-700 transition-colors w-full md:w-auto justify-center"
-            onClick={() => {/* Handle new alert */}}
+            onClick={() => {}}
           >
             <FaPlus /> Create New Alert
-          </button>
+          </button></Link>
         </div>
 
         {/* Alerts Grid */}
@@ -75,12 +77,13 @@ const Alertspage = () => {
             <FaBell className="mx-auto text-6xl text-gray-300 mb-4" />
             <h3 className="text-xl font-semibold text-gray-700 mb-2">No Price Alerts Yet</h3>
             <p className="text-gray-500 mb-6">Start tracking prices by creating your first alert</p>
-            <button
+            <Link to="/alerts/new"><button
               className="bg-purple-800 text-white px-6 py-2 rounded-lg flex items-center gap-2 hover:bg-purple-700 transition-colors mx-auto"
-              onClick={() => {/* Handle new alert */}}
+              onClick={() => {}}
             >
               <FaPlus /> Create New Alert
-            </button>
+            </button></Link>
+
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

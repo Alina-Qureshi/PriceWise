@@ -93,6 +93,7 @@ const Featuredproducts = () => {
             ))}
           </Slider>
         </div>
+        <div className="flex justify-center my-5"><a className="text-purple-800">view all products</a></div>
       </div>
     </div>
   );

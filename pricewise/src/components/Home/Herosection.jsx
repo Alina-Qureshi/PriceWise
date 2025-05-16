@@ -4,6 +4,7 @@ import { loadFull } from "tsparticles";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {Link} from 'react-router-dom';
 
 const Herosection = () => {
   const particlesInit = async (main) => {
@@ -116,10 +117,10 @@ const Herosection = () => {
 
           <div className="flex gap-6">
             <button className="px-8 py-3 bg-purple-800 text-white rounded-full hover:bg-purple-600 transition-all duration-200 font-semibold">
-              Start Tracking
+            <Link to="/search">Start Tracking</Link>
             </button>
             <button className="px-8 py-3 border-2 border-purple-800 text-purple-800 rounded-full hover:bg-purple-800 hover:text-white transition-all duration-200 font-semibold">
-              <a href="/Blog">See How It Works</a>
+              <Link to="/about">See How It Works</Link>
             </button>
           </div>
         </div>
@@ -133,7 +134,7 @@ const Herosection = () => {
                   <img
                     src={image}
                     alt={`E-commerce slide ${index + 1}`}
-                    className="w-full h-[400px] object-cover rounded-xl"
+                    className="w-full h-[400px] object-cover rounded-xl border border-purple-800 right-0"
                   />
                 </div>
               ))}

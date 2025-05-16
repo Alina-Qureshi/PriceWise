@@ -9,6 +9,9 @@ import AlertsPage from './pages/AlertsPage';
 import Contactpage from './pages/Contactpage';
  import Login from './pages/Login';
  import Signup from './pages/Signup';
+ import Searchpage from './components/Home/Searchpage';
+import Featuredproducts from './components/Home/Featuredproducts';
+import NewAlert from './pages/NewAlert';
 
 
 const App = () => {
@@ -16,14 +19,22 @@ const App = () => {
     <>
       
         <Routes>
+        <Route path="/electronics" element={<Featuredproducts/>}/>
+          <Route path="/beauty" element={< Featuredproducts/>} />
+          <Route path="/sports" element={< Featuredproducts/>}/>
+          <Route path="/fashion" element={<Featuredproducts/>}/> 
+          <Route path="/home" element={<Featuredproducts/>}/> 
+
+          <Route path="/search" element={<Searchpage/>}/>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<Signup/>}/> 
-        <Route path="/product/:productId" element={<Productpage />} />
+        <Route path="/alerts/:productId" element={<Productpage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/alerts" element={<AlertsPage />} />
           <Route path="/about" element={<Aboutpage />} />
           <Route path="/contactus" element={<Contactpage />} />
+          <Route path="/alerts/new" element={<NewAlert />} />
         </Routes>
       
     </>
