@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Link} from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Herosection = () => {
   const particlesInit = async (main) => {
@@ -26,6 +28,16 @@ const Herosection = () => {
     "/images/ecommerce2.jpg",
     "/images/ecommerce3.jpg",
   ];
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
 
   return (
     <div className="relative">
@@ -99,19 +111,24 @@ const Herosection = () => {
             Monitor price changes and save more on your shopping.
           </p>
 
-          <form className="flex flex-col space-y-4">
+          <form onSubmit={handleSearch} className="flex flex-col space-y-4">
             <h2 className="text-2xl font-bold text-gray-700">
               Track Your Product here
             </h2>
             <div className="flex items-center justify-center bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden w-full max-w-xl py-2 border border-gray-200">
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search Daraz product or paste URL..."
                 className="flex-grow px-6 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-none transition-all duration-200"
               />
-              <button className="flex items-center gap-2 bg-purple-800 text-white px-8 py-3 rounded-full hover:bg-purple-600 transform hover:scale-105 transition-all duration-200 mx-2">
-                <a href="/Searchpage">Search</a>
-              </button>
+              <Link to="Searchresult"><button 
+                type="submit"
+                className="flex items-center gap-2 bg-purple-800 text-white px-8 py-3 rounded-full hover:bg-purple-600 transform hover:scale-105 transition-all duration-200 mx-2"
+              >
+                Search
+              </button></Link>
             </div>
           </form>
 

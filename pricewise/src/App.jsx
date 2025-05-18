@@ -12,6 +12,8 @@ import Contactpage from './pages/Contactpage';
  import Searchpage from './components/Home/Searchpage';
 import Featuredproducts from './components/Home/Featuredproducts';
 import NewAlert from './pages/NewAlert';
+import Searchresult from './pages/Searchresult';
+import Faqs from './pages/Faqs';
 
 
 const App = () => {
@@ -35,6 +37,8 @@ const App = () => {
           <Route path="/about" element={<Aboutpage />} />
           <Route path="/contactus" element={<Contactpage />} />
           <Route path="/alerts/new" element={<NewAlert />} />
+          <Route path="/Searchresult" element={<Searchresult />} />
+          <Route path="/faq" element={<Faqs />} />
         </Routes>
       
     </>
