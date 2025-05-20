@@ -9,11 +9,12 @@ import AlertsPage from './pages/AlertsPage';
 import Contactpage from './pages/Contactpage';
  import Login from './pages/Login';
  import Signup from './pages/Signup';
- import Searchpage from './components/Home/Searchpage';
+
 import Featuredproducts from './components/Home/Featuredproducts';
 import NewAlert from './pages/NewAlert';
 import Searchresult from './pages/Searchresult';
 import Faqs from './pages/Faqs';
+import TrendingDeals from './components/Home/TrendingDeals';
 
 
 const App = () => {
@@ -27,7 +28,7 @@ const App = () => {
           <Route path="/fashion" element={<Featuredproducts/>}/> 
           <Route path="/home" element={<Featuredproducts/>}/> 
 
-          <Route path="/search" element={<Searchpage/>}/>
+          <Route path="/trendingdeals" element={<TrendingDeals/>}/>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login/>}/>
           <Route path="/signup" element={<Signup/>}/> 
@@ -37,7 +38,7 @@ const App = () => {
           <Route path="/about" element={<Aboutpage />} />
           <Route path="/contactus" element={<Contactpage />} />
           <Route path="/alerts/new" element={<NewAlert />} />
-          <Route path="/Searchresult" element={<Searchresult />} />
+          <Route path="/search" element={<Searchresult />} />
           <Route path="/faq" element={<Faqs />} />
         </Routes>
       

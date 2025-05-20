@@ -34,9 +34,14 @@ const Herosection = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    const trimmedQuery = searchQuery.trim();
+    if (trimmedQuery.length < 3) {
+      alert('Please enter at least 3 characters.');
+      return;
     }
+    // Redirect user to the search results page with query parameter
+    navigate(`/search?query=${encodeURIComponent(trimmedQuery)}`);
+    setSearchQuery('');
   };
 
   return (
@@ -116,19 +121,19 @@ const Herosection = () => {
               Track Your Product here
             </h2>
             <div className="flex items-center justify-center bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden w-full max-w-xl py-2 border border-gray-200">
-              <input
+              <input 
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search Daraz product or paste URL..."
+                placeholder="Search products or paste URL..."
                 className="flex-grow px-6 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-0 focus:border-none transition-all duration-200"
               />
-              <Link to="Searchresult"><button 
+              <button
                 type="submit"
                 className="flex items-center gap-2 bg-purple-800 text-white px-8 py-3 rounded-full hover:bg-purple-600 transform hover:scale-105 transition-all duration-200 mx-2"
               >
                 Search
-              </button></Link>
+              </button>
             </div>
           </form>
 

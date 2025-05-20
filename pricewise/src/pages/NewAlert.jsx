@@ -45,7 +45,7 @@ const NewAlert = () => {
               </label>
               <input
                 type="url"
-                placeholder="Paste Daraz product URL here"
+                placeholder="Paste product URL here"
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 value={productUrl}
                 onChange={(e) => setProductUrl(e.target.value)}

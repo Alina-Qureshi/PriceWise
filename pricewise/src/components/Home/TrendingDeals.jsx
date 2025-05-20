@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
-const Searchpage = () => {
+const TrendingDeals = () => {
     const SAMPLE_PRODUCTS = [
         {
           id: 1,
@@ -143,4 +143,4 @@ const Searchpage = () => {
   );
 };
 
-export default Searchpage;
+export default TrendingDeals;

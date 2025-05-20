@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Herosection from '../components/Home/Herosection';
 import Featuredproducts from '../components/Home/Featuredproducts';
-import Searchpage from '../components/Home/Searchpage';
+import Searchpage from '../components/Home/TrendingDeals';
 import Webbenefits from '../components/Home/Webbenefits';
 import Usageofweb from '../components/Home/Usageofweb';
 import Pagelayout from '../components/layout/Pagelayout';

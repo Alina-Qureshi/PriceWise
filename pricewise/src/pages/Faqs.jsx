@@ -5,7 +5,7 @@ import Footer from '../components/layout/Footer'
 const Faqs = () => {
   return (
     <>
-    <Navbar/>
+  
     <div className="mt-24 mb-16">
           <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -16,7 +16,7 @@ const Faqs = () => {
             {/* Apply same styling to all FAQ boxes */}
             <div className="bg-white p-8 rounded-lg shadow hover:shadow-lg hover:border-purple-800 hover:border transition-all duration-200">
               <h3 className="font-bold mb-4 text-lg">Can I track products from other stores?</h3>
-              <p className="text-gray-600">Currently, we only support tracking products from Daraz, but we're working on expanding to more stores.</p>
+              <p className="text-gray-600">We support tracking products from multiple e-commerce platforms to help you find the best deals.</p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow hover:shadow-lg hover:border-purple-800 hover:border transition-all duration-200">
               <h3 className="font-bold mb-4 text-lg">Is this service free to use?</h3>
@@ -28,7 +28,7 @@ const Faqs = () => {
             </div>
           </div>
         </div>
-        <Footer/>
+       
     </>
   )
 }
